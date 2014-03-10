@@ -14,7 +14,7 @@ var app = app || {};
 		defaults: {
 			title: '',
 			completed: false,
-			date: currentDate.getMonth()+1 + '/' + currentDate.getDate() + '/' + currentDate.getFullYear()
+			setDate: currentDate.getMonth()+1 + '/' + currentDate.getDate() + '/' + currentDate.getFullYear()
 		},
 
 		// Toggle the `completed` state of this todo item.
