@@ -235,7 +235,12 @@ label[for='toggle-all'] {
 	padding: 13px 17px 12px 17px;
 	margin: 0 0 0 43px;
 }
-
+#todo0list li.editing .edit-date {
+	display:block;
+	width: 506px;
+	padding: 13px 17px 12px 17px;
+	margin: 0 0 0 43px;
+}
 #todo-list li.editing .view {
 	display: none;
 }
@@ -323,7 +328,9 @@ label[for='toggle-all'] {
 #todo-list li .edit {
 	display: none;
 }
-
+#todo-list li .edit-date {
+	display:none;
+}
 #todo-list li.editing:last-child {
 	margin-bottom: -1px;
 }
