@@ -19,7 +19,8 @@ var app = app || {};
 		events: {
 			'click .toggle': 'toggleCompleted',
 			'dblclick label': 'edit',
-			'swipe label': 'clear',
+			//'swipe label': 'clear',
+			'drag  label': 'toggleCompleted',
 			'click .destroy': 'clear',
 			'keypress .edit': 'updateOnEnter',
 			'keydown .edit': 'revertOnEscape',
