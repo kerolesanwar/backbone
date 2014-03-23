@@ -22,8 +22,8 @@ var app = app || {};
 			//'swipe label': 'clear',
 			'drag  label': 'toggleCompleted',
 			'click .destroy': 'clear',
-			'keypress .edit': 'updateOnEnter',
-			'keydown .edit': 'revertOnEscape',
+			'keypress .edit, .edit-date' : 'updateOnEnter',
+			'keydown .edit, .edit-date': 'revertOnEscape',
 			'blur .edit': 'close'
 		},
 
@@ -55,6 +55,7 @@ var app = app || {};
 			this.$el.toggleClass('completed', this.model.get('completed'));
 			this.toggleVisible();
 			this.$input = this.$('.edit');
+			this.$dateInput = this.$('.edit-date');
 			return this;
 		},
 
@@ -78,14 +79,15 @@ var app = app || {};
 		// Switch this view into `"editing"` mode, displaying the input field.
 		edit: function () {
 			this.$el.addClass('editing');
-			this.$input.focus();
+			this.$inputs.focus();
 		},
 
 		// Close the `"editing"` mode, saving changes to the todo.
 		close: function () {
 			var value = this.$input.val();
 			var trimmedValue = value.trim();
-
+			var dateValue = this.$dateInput.val();
+			var trimmedDate = dateValue.trim();
 			// We don't want to handle blur events from an item that is no
 			// longer being edited. Relying on the CSS class here has the
 			// benefit of us not having to maintain state in the DOM and the
@@ -94,8 +96,8 @@ var app = app || {};
 				return;
 			}
 
-			if (trimmedValue) {
-				this.model.save({ title: trimmedValue });
+			if (trimmedValue && trimmedDate) {
+				this.model.save({ title: trimmedValue, setDate: trimmedDate });
 
 				if (value !== trimmedValue) {
 					// Model values changes consisting of whitespaces only are
