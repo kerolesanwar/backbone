@@ -19,12 +19,13 @@ var app = app || {};
 		events: {
 			'touch .toggle': 'toggleCompleted',
 			'dblclick label': 'edit',
+			'hold  label': 'edit',
 			//'swipe label': 'clear',
-			'swipe  label': 'toggleCompleted',
+			'drag  label': 'toggleCompleted',
 			'touch  .destroy': 'clear',
 			'keypress .edit, .edit-date' : 'updateOnEnter',
 			'keydown .edit, .edit-date': 'revertOnEscape',
-			'swipe .edit, .edit-date' : 'close'
+			'doubletap  .edit, .edit-date' : 'close'
 			//'blur .edit': 'close'
 		},
 
