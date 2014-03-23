@@ -25,7 +25,7 @@ var app = app || {};
 			'touch  .destroy': 'clear',
 			'keypress .edit, .edit-date' : 'updateOnEnter',
 			'keydown .edit, .edit-date': 'revertOnEscape',
-			'doubletap  .edit, .edit-date' : 'close'
+			'hold  .edit, .edit-date' : 'close'
 			//'blur .edit': 'close'
 		},
 
