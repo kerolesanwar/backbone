@@ -39,7 +39,7 @@ var app = app || {};
 
 		// Todos are sorted by their original insertion order.
 		comparator: function (todo) {
-			return todo.get('order');
+			return new Date(todo.get('setDate'));
 		}
 	});
 
